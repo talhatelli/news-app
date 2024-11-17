@@ -1,3 +1,5 @@
+import Line from "../Dividers/Line";
+
 export default function CategoryTitle({ category }) {
   const formattedCategory =
     category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
@@ -14,22 +16,8 @@ export default function CategoryTitle({ category }) {
       <h1 style={{ fontSize: "24px", fontWeight: "bold" }}>
         {formattedCategory}
       </h1>
-      <div
-        style={{
-          width: `${lineWidth}px`,
-          height: "2px",
-          backgroundColor: "#FF9F1C",
-          margin: "1px 0",
-        }}
-      />
-      <div
-        style={{
-          width: `${lineWidth}px`,
-          height: "2px",
-          backgroundColor: "#FF9F1C",
-          margin: "1px 0",
-        }}
-      />
+      <Line lineWidth={`${lineWidth}`} lineHeight={2} />
+      <Line lineWidth={`${lineWidth}`} lineHeight={2} />
     </div>
   );
 }

@@ -1,15 +1,9 @@
 import ArticleCard from "./ArticleCard";
+import "@/styles/news.css";
 
 export default function NewsGrid({ articles }) {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-        gap: "30px",
-        padding: "50px 100px",
-      }}
-    >
+    <div className="news-grid">
       {articles.map((article, index) => (
         <ArticleCard key={index} article={article} />
       ))}

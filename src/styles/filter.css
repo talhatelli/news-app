@@ -1,0 +1,118 @@
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin: 125px 0 0 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.filter-button.active {
+    background-color: #fa923d;
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-button.inactive {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.filter-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-dropdown-content {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.filter-close-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    color: #999;
+}
+
+.filter-select,
+.filter-input {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 240px;
+}
+
+.filter-search-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fa923d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .filter-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-options {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 15px;
+    }
+  
+}
+
+@media (max-width: 480px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .filter-dropdown-content {
+        width: 95%;
+        left: 2.5%;
+        right: 2.5%;
+        top: 60px;
+    }
+}

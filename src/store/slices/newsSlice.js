@@ -1,21 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { getNews } from "@/lib/api";
 
 export const fetchNews = createAsyncThunk(
   "news/fetchNews",
   async ({ category, selectedCountry, searchQuery }, { rejectWithValue }) => {
     try {
-      const response = await axios.get("https://newsapi.org/v2/top-headlines", {
-        params: {
-          category,
-          country: selectedCountry,
-          q: searchQuery,
-          apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
-        },
+      return await getNews({
+        category,
+        country: selectedCountry,
+        query: searchQuery,
       });
-      return response.data.articles;
     } catch (error) {
-      return rejectWithValue(error.response.data);
+      return rejectWithValue(error.response?.data || error.message);
     }
   }
 );
@@ -26,8 +22,21 @@ const newsSlice = createSlice({
     articles: [],
     loading: false,
     error: null,
+    category: "general",
+    selectedCountry: "us",
+    searchQuery: "",
   },
-  reducers: {},
+  reducers: {
+    setCategory: (state, action) => {
+      state.category = action.payload;
+    },
+    setSelectedCountry: (state, action) => {
+      state.selectedCountry = action.payload;
+    },
+    setSearchQuery: (state, action) => {
+      state.searchQuery = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchNews.pending, (state) => {
@@ -44,5 +53,8 @@ const newsSlice = createSlice({
       });
   },
 });
+
+export const { setCategory, setSelectedCountry, setSearchQuery } =
+  newsSlice.actions;
 
 export default newsSlice.reducer;

@@ -1,4 +1,3 @@
-import loadingGif from "../app/assets/icons/loading.gif";
 import Image from "next/image";
 
 export default function Loading() {
@@ -12,7 +11,12 @@ export default function Loading() {
         height: "100vh",
       }}
     >
-      <Image src={loadingGif} alt="Loading..." width={100} height={100} />
+      <Image
+        src={"/icons/loading.gif"}
+        alt="Loading..."
+        width={100}
+        height={100}
+      />
       <h2
         style={{
           display: "flex",
