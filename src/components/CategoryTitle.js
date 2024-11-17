@@ -16,7 +16,7 @@ export default function CategoryTitle({ category }) {
       </h1>
       <div
         style={{
-          width: `${lineWidth}px`, // Set the line width dynamically
+          width: `${lineWidth}px`,
           height: "2px",
           backgroundColor: "#FF9F1C",
           margin: "1px 0",
@@ -24,7 +24,7 @@ export default function CategoryTitle({ category }) {
       />
       <div
         style={{
-          width: `${lineWidth}px`, // Set the line width dynamically
+          width: `${lineWidth}px`,
           height: "2px",
           backgroundColor: "#FF9F1C",
           margin: "1px 0",

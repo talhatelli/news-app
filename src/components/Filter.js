@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 
-import SearchIcon from "../assets/icons/search.svg";
-import DateIcon from "../assets/icons/date.svg";
-import CountryIcon from "../assets/icons/country.svg";
-import XSymbol from "../assets/icons/x-symbol.svg";
+import SearchIcon from "../app/assets/icons/search-icon.svg";
+import DateIcon from "../app/assets/icons/date-icon.svg";
+import CountryIcon from "../app/assets/icons/country-icon.svg";
+import XSymbol from "../app/assets/icons/x-symbol-icon.svg";
 
 export default function Filter({
   category,
@@ -93,7 +93,7 @@ export default function Filter({
           "Health",
           "Science",
           "Sports",
-          "Technology",
+          "Technology dsasdasd",
         ].map((cat) => (
           <button
             key={cat}
@@ -127,7 +127,6 @@ export default function Filter({
           marginLeft: "10px",
         }}
       >
-        {/* Country Selector */}
         <div style={{ position: "relative" }}>
           <CountryIcon
             onClick={handleCountryToggle}
@@ -180,7 +179,6 @@ export default function Filter({
           )}
         </div>
 
-        {/* Date Selector */}
         <div style={{ position: "relative" }}>
           <DateIcon
             onClick={handleDateToggle}
@@ -231,7 +229,6 @@ export default function Filter({
           )}
         </div>
 
-        {/* Search Input */}
         <div style={{ position: "relative", display: "inline-block" }}>
           <SearchIcon
             onClick={handleSearchToggle}

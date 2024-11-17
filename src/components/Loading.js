@@ -1,4 +1,4 @@
-import loadingGif from "../assets/icons/loading.gif";
+import loadingGif from "../app/assets/icons/loading.gif";
 import Image from "next/image";
 
 export default function Loading() {
